@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/material.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/app.css') }}">
-    <title>RaspiWiFi Setup</title>
+    <script src="../static/js/material.min.js"></script>
+
+
+    <title>cloudsensing - Gateway WiFi setup</title>
   </head>
   <body>
-    {% block body %}
-    {% endblock %}
+    <div class="container main-content" id="mainContent">
+      <div class="mdl-card content-card">
+        {% block body %}
+        {% endblock %}
+      </div>
+    </div>
   </body>
 </html>
