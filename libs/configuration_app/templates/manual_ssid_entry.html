@@ -1,20 +1,27 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-  <div id="mainContent">
-    <h1>WiFi Setup</h1>
-    <div class="wifiIcon"></div>
+<h1>WiFi Setup</h1>
+<div class="">
+  <svg width="80" height="80" viewBox="0 0 25 25">
+    <rect width="24" height="24" fill="none" rx="0" ry="0"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M15 18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18C9 16.3431 10.3431 15 12 15C13.6569 15 15 16.3431 15 18ZM13.9 18C13.9 19.0493 13.0493 19.9 12 19.9C10.9507 19.9 10.1 19.0493 10.1 18C10.1 16.9507 10.9507 16.1 12 16.1C13.0493 16.1 13.9 16.9507 13.9 18Z" fill="#000000"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.00591 6.33382C1.13807 6.92311 1.02731 8.09956 1.67705 8.92313C2.39567 9.83401 3.75723 9.95296 4.73271 9.32482C6.34456 8.28689 8.95669 7 12 7C15.0457 7 17.6632 8.28885 19.2777 9.32719C20.253 9.95439 21.6134 9.8337 22.3304 8.92242C22.9783 8.09905 22.8667 6.92429 21.9999 6.33582C20.0547 5.01525 16.3703 3 12 3C7.63193 3 3.95075 5.01321 2.00591 6.33382ZM2.70598 7.01736C2.24952 7.32326 2.17755 7.9418 2.51762 8.37341C2.86436 8.8135 3.50712 8.89301 3.97683 8.58758C5.38621 7.6711 8.44367 6 12 6C15.5576 6 18.6198 7.67229 20.0306 8.58855C20.5002 8.89355 21.1425 8.81363 21.4888 8.37359C21.8285 7.94189 21.7562 7.3235 21.2997 7.01787C19.7812 6.00121 16.2522 4 12 4C7.7486 4 4.22325 6.00054 2.70598 7.01736ZM5.34939 13.58C4.72645 12.7916 4.80644 11.6667 5.63764 11.102C6.99938 10.1769 9.26858 9 12 9C14.7347 9 17.0026 10.1797 18.3611 11.1053C19.1884 11.669 19.2683 12.7891 18.6494 13.5759C17.9074 14.5192 16.4725 14.5933 15.4328 13.9937C14.5278 13.4716 13.3395 13 12 13C10.6602 13 9.47199 13.4718 8.5672 13.9941C7.52777 14.594 6.0934 14.5218 5.34939 13.58ZM6.40275 11.7396C5.94715 12.0344 5.8832 12.6434 6.21969 13.0691C6.57472 13.5183 7.239 13.5906 7.72782 13.2925C8.63627 12.7386 10.1875 12 12 12C13.8118 12 15.3622 12.7379 16.2707 13.2918C16.7597 13.5899 17.4244 13.5165 17.7782 13.0661C18.1118 12.6415 18.0477 12.0359 17.5949 11.742C16.5423 11.0589 14.5065 10 12 10C9.49646 10 7.45878 11.0564 6.40275 11.7396Z" fill="#29b6f6"/>
+  </svg>
+</div>
 
-    <form action="{{ url_for('save_credentials') }}" method=post>
-      <ul>
-        <li><label for="ssid">Enter your network SSID:</label></li>
-        <li><input type="text" name="ssid", class="wifiNetworkInputs"></li>
-
-        <li><label for="wifi_key">Your Wifi password</label></li>
-        <li><input type="password" name="wifi_key", class="wifiNetworkInputs"></li>
-
-        <input type="submit", class="wifiConnectButton">
-      </ul>
-    </form>
+<form action="{{ url_for('save_credentials') }}" method=post>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <label class="mdl-textfield__label" for="ssid">Enter your network SSID</label>
+    <input class="mdl-textfield__input" type="text" name="ssid", class="wifiNetworkInputs">
   </div>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <label class="mdl-textfield__label" for="wifi_key">Your Wifi password</label>
+    <input class="mdl-textfield__input" type="password" name="wifi_key", class="wifiNetworkInputs">
+  </div>
+
+  <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored connect-button"> Connect </button>
+  
+</form>
 {% endblock %}
