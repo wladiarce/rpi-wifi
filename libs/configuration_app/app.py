@@ -89,6 +89,7 @@ def create_wpa_supplicant(ssid, wifi_key):
 
     temp_conf_file.write('ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev\n')
     temp_conf_file.write('update_config=1\n')
+    temp_conf_file.write('country=US\n')
     temp_conf_file.write('\n')
     temp_conf_file.write('network={\n')
     temp_conf_file.write('	ssid="' + ssid + '"\n')
